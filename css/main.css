@@ -23,7 +23,8 @@ main {
     align-items: center;
 }
 main .desktop {
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 100%;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -38,7 +39,9 @@ main .mobile {
     }
     main .mobile {
         display: block;
-        max-width: 100%;
+        /* max-width: 100%; */
+        width: 100%;
+        height: 100%;
         position: absolute;
         left: 0;
         bottom: 0;
