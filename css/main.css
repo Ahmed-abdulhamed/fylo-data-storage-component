@@ -1,0 +1,213 @@
+:root {
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --white: white;
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+}
+/* end global rules */
+main {
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .desktop {
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+}
+main .mobile {
+    display: none;
+}
+@media (max-width: 375px) {
+    main .desktop {
+        display: none;
+    }
+    main .mobile {
+        display: block;
+        max-width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+.content {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80%;
+}
+@media (min-width: 1200px) {
+    .content {
+        width: 70%;
+    }
+}
+@media (max-width: 991px) {
+    .content {
+        flex-direction: column;
+        /* ده الحل انك تحط مين ويدث عشان المساحه متقلش عن الويدث ده */
+        min-width: 322px;
+        max-width: 60%;
+    }
+}
+/* ده بقى ملهاش لازمه عشان حطيت المين الويدث */
+/* @media (max-width: 375px) {
+    .content {
+        width: 95%;
+    }
+} */
+.content .box {
+    background-color: var(--Dark-Blue);
+}
+.content .box:first-child {
+    padding: 25px 30px;
+    border-radius: 8px 50px 8px 8px;
+    flex: 1;
+}
+.content .box .logo {
+    margin-bottom: 20px;
+}
+.content .box .links img {
+    background-color: var(--very-dark-blue);
+    width: 24px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: content-box;
+}
+.content .box .links img:not(:last-child) {
+    margin-right: 10px;
+}
+.content .box:nth-child(2) {
+    padding: 30px;
+    position: relative;
+    border-radius: 8px;
+    flex: 2;
+}
+@media (max-width: 991px) {
+    .content .box {
+        width: 100%;
+    }
+}
+.content .box .gb-left {
+    padding: 10px 15px;
+    background-color: var(--white);
+    width: fit-content;
+    font-size: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    right: 30px;
+    top: -30px;
+}
+@media (max-width: 991px) {
+    .content .box .gb-left {
+        top: auto;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (min-width: 992px) {
+    .content .box .gb-left::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 15px;
+        border-style: solid;
+        border-color: transparent var(--white) transparent transparent;
+        right: 0;
+        bottom: -15px;
+    }
+}
+.content .box .gb-left span {
+    font-size: 25px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.content .box p {
+    color: var(--Grayish-Blue);
+    font-size: 18px;
+    margin-left: -2px;
+}
+@media (max-width: 991px) {
+    .content .box p {
+        margin-left: 0;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+.content .box p span {
+    color: var(--Pale-Blue);
+}
+.content .box .prog {
+    width: 100%;
+    height: 18px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: var(--very-dark-blue);
+    margin: 15px 0 5px;
+}
+.content .box .prog span {
+    display: block;
+    height: 100%;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 10px;
+    position: relative;
+}
+.content .box .prog span::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2px;
+}
+.content .box .num {
+    color: var(--Pale-Blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -2px;
+}
+.attribution {
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 322px;
+    text-align: center;
+    color: var(--Grayish-Blue);
+}
+@media (max-width: 375px) {
+    .attribution {
+        padding: 0 18px;
+    }
+}
+.attribution a {
+    color: var(--Pale-Blue);
+    text-decoration: none;
+    font-weight: 700;
+}
